@@ -106,7 +106,7 @@ export const focusOutline = () => css`
   outline: 2px dotted ${({ theme }) => theme.materialText};
 `;
 
-const btoa = b => Buffer.from(b).toString('base64')
+const btoa = b => Buffer.from(b).toString('base64');
 
 const createTriangleSVG = (color, angle = 0) => {
   const svg = `<svg height="26" width="26" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -114,7 +114,12 @@ const createTriangleSVG = (color, angle = 0) => {
       <polygon fill="${color}" points="6,10 20,10 13,17"/>
     </g>
   </svg>`;
-  const encoded = typeof window === undefined ? btoa(svg) : window.btoa(svg);
+  let encoded;
+  try {
+    encoded = window.btoa(svg);
+  } catch {
+    encoded = btoa(svg);
+  }
   return `url(data:image/svg+xml;base64,${encoded})`;
 };
 
