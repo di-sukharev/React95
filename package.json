@@ -1,6 +1,6 @@
 {
-  "name": "react95",
-  "version": "0.0.0-development",
+  "name": "sukharev-react95",
+  "version": "1.0.0",
   "description": "Refreshed Windows95 UI components for modern web apps - React95",
   "keywords": [
     "react",
@@ -10,7 +10,7 @@
     "vaporwave"
   ],
   "license": "MIT",
-  "repository": "git@github.com:arturbien/React95.git",
+  "repository": "git@github.com:di-sukharev/React95.git",
   "homepage": "https://react95.io",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
