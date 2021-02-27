@@ -1,6 +1,6 @@
 {
   "name": "sukharev-react95",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Refreshed Windows95 UI components for modern web apps - React95",
   "keywords": [
     "react",
@@ -24,6 +24,7 @@
     "start": "start-storybook -p 9009 -s public",
     "build:storybook": "build-storybook -s public -o ./storybook",
     "build": "rm -rf dist && npm run build:prod",
+    "push": "npm run build && npm version patch --force && npm publish",
     "build:dev": "cross-env NODE_ENV=development rollup -c",
     "build:prod": "cross-env NODE_ENV=production rollup -c",
     "test": "jest ./src",
