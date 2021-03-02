@@ -18,8 +18,6 @@ const Monitor = styled.div`
   position: relative;
   z-index: 1;
   box-sizing: border-box;
-  width: 195px;
-  height: 155px;
   padding: 12px;
   background: ${({ theme }) => theme.material};
   border-top: 4px solid ${({ theme }) => theme.borderLightest};
@@ -103,12 +101,12 @@ const Stand = styled.div`
 `;
 
 const Desktop = React.forwardRef(function Desktop(props, ref) {
-  const { backgroundStyles, children, ...otherProps } = props;
+  const { backgroundStyles, children, monitorProps, ...wrapperProps } = props;
 
   return (
-    <Wrapper ref={ref} {...otherProps}>
+    <Wrapper ref={ref} {...wrapperProps}>
       <Inner>
-        <Monitor>
+        <Monitor monitorProps={monitorProps}>
           <Background style={backgroundStyles}>{children}</Background>
         </Monitor>
         <Stand />
@@ -118,10 +116,12 @@ const Desktop = React.forwardRef(function Desktop(props, ref) {
 });
 
 Desktop.defaultProps = {
-  backgroundStyles: null
+  backgroundStyles: null,
+  monitorProps: null
 };
 
 Desktop.propTypes = {
+  monitorProps: propTypes.object,
   backgroundStyles: propTypes.object,
   // eslint-disable-next-line react/require-default-props
   children: propTypes.node
