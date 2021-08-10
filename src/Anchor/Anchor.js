@@ -7,6 +7,7 @@ const StyledAnchor = styled.a`
   color: ${({ theme }) => theme.anchor};
   font-size: inherit;
   text-decoration: underline;
+  cursor: pointer;
   &:visited {
     color: ${({ theme }) => theme.anchorVisited};
   }
