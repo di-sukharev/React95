@@ -6,8 +6,8 @@ import styled from 'styled-components';
 const StyledAnchor = styled.a`
   color: ${({ theme }) => theme.anchor};
   font-size: inherit;
-  text-decoration: underline;
   cursor: pointer;
+  text-decoration: underline;
   &:visited {
     color: ${({ theme }) => theme.anchorVisited};
   }
